@@ -51,3 +51,15 @@ body {
     color: black;
     margin: 10px;
 }
+
+label {
+    color: black;
+}
+
+input {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 0 0 10px 0 rgba(0,0,0,0.1);
+    
+}
