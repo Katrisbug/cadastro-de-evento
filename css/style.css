@@ -1,8 +1,29 @@
-h2 {
-    background-color: #111;
+body {
+    background-color: #d9d9d9d9;
+    margin: 0px;
+    height: 100%;
+}
+
+.cabecalho h2 {
     color: #fff;
+    font-size: 28px;
+    margin: 0%;
+}
+
+.subtexto {
+    color: #42D3FF;
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.cabecalho {
+    background-color: #111;
     padding: 20px;
     text-align: center;
-    box-sizing: border-box;
-    margin: 0px auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 60px;
+    height: 200px;
 }
