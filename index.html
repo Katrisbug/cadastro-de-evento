@@ -1,108 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de cadastro de evento</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de cadastro de evento</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="cabecalho">
-        <h1>Crie e compartilhe seu evento.</h1>
-        <p>O primeiro passo, é preencher esse formulário de inscrição.</p>
-    <div class="login-box">
-        <h2>Informações do Evento</h2>
-        <hr>
-        
-        <form>
-            <label for="text">Título do evento <small>(mínimo 8 caracteres)</small></label>
+  <!-- Cabeçalho -->
+  <div class="cabecalho">
+    <h1>Crie e compartilhe seu evento.</h1>
+    <p>O primeiro passo é preencher esse formulário de inscrição.</p>
+  </div>
 
-            <input type="text" id="text"
-            text="text" minlength="8" maxlength="8"
-            style="width: 45%; height: 20px; font-size: 10px;">
+  <!-- Caixa principal do formulário -->
+  <div class="login-box">
+    <h2>Informações do Evento</h2>
+    <hr>
 
-            <label for="link">Link do evento <small>(comece com https://)</small></label>
+    <form>
+      <!-- Informações básicas -->
+      <label for="titulo">Título do evento <small>(mínimo 8 caracteres)</small></label>
+      <input type="text" id="titulo" name="titulo" minlength="8" required>
 
-            <input type="link" id="link"
-            link="link" style="width: 45%; height: 20px; font-size: 10px;">
+      <label for="link">Link do evento <small>(comece com https://)</small></label>
+      <input type="url" id="link" name="link" pattern="https://.*" required>
 
-            <label for="number">Whatsapp para contato <small>(somente números)</small></label>
+      <label for="whatsapp">Whatsapp para contato <small>(somente números)</small></label>
+      <input type="tel" id="whatsapp" name="whatsapp" pattern="[0-9]+" required>
 
-            <input type="number" id="number"
-            link="number" style="width: 45%; height: 20px; font-size: 10px;">
+      <label for="info">Informações extras</label>
+      <input type="text" id="info" name="info">
 
-            <label for="text">Informações extras</label>
+      <label for="categoriaeventos">Categoria</label>
+      <select id="categoriaeventos" name="categoriaeventos">
+        <option value="">Tipo do evento</option>
+        <option value="aniversario">Aniversário</option>
+        <option value="reuniao">Reunião</option>
+        <option value="concerto">Concerto/Música</option>
+        <option value="festa">Festa</option>
+        <option value="viagem">Viagem</option>
+        <option value="casamento">Casamento</option>
+        <option value="esportivo">Evento Esportivo</option>
+        <option value="outros">Outros</option>
+      </select>
 
-            <input type="text" id="text"
-            text="text" style="width: 45%; height: 20px; font-size: 10px;">
+      <h2>Privacidade</h2>
+      <hr>
 
-            <label for="categoriaeventos">Categoria</label>
-            <select id="categoriaeventos" name="categoriaeventos">
-                <option value="">Tipo do evento</option>
-                <option value="aniversario">Aniversário</option>
-                <option value="reuniao">Reunião</option>
-                <option value="concerto">Concerto/Música</option>
-                <option value="festa">Festa</option>
-                <option value="viagem">Viagem</option>
-                <option value="casamento">Casamento</option>
-                <option value="esportivo">Evento Esportivo</option>
-                <option value="outros">Outros</option>
-            </select>
+      <label for="email">E-mail do administrador <small>(digite um email válido)</small></label>
+      <input type="email" id="email" name="email" required>
 
-        </form>
+      <label for="senha">Senha de acesso para os participantes <small>(mínimo 8 caracteres)</small></label>
+      <input type="password" id="senha" name="senha" minlength="8" required>
 
-    <div>
-        <h2>Privacidade</h2>
-        <hr>
+      <label class="checkbox-container">
+        <input type="checkbox" checked>
+        <span class="checkmark"></span>
+        Evento privado
+      </label>
 
-        <form>
-            <label for="e-mail">E-mail do administrador <small>(digite um email válido)</small></label>
+      <h2>Dia e hora</h2>
+      <hr>
 
-            <input type="email" id="E-mail" name="E-mail" 
-            style="width: 12%; height:20px; font-size:10px;">
+      <div class="bloco-horario">
+        <div class="campo-hora">
+          <label for="data">Data</label>
+          <input type="date" id="data" name="data" required>
+        </div>
 
-            <label for="senha">Senha de acesso para os participantes <small>(mínimo 8 caracteres)</small></label>
+        <div class="campo-hora">
+          <label for="das">Das</label>
+          <input type="time" id="das" name="das" value="19:00" required>
+        </div>
 
-            <input type="password" id="senha" name="senha" 
-            minlength="8" maxlength="8"
-            style="width: 12%; height:20px; font-size:10px;">
+        <div class="campo-hora">
+          <label for="ate">Até</label>
+          <input type="time" id="ate" name="ate" value="20:00" required>
+        </div>
+      </div>
+    </form>
+  </div>
 
-            <label class="checkbox-container">
-                <input type="checkbox" checked>
-                <span class="checkmark"></span>
-                Evento privado
-            </label>
-        </form>
-
-    <div>
-        <h2>Dia e hora</h2>
-        <hr>
-
-        <form>
-            <div class="bloco-horario">
-            <div class="campo-hora">
-            <label for="data">Data</label> 
-            <input type="date" id="data" name="data">
-            </div>
-
-            <div class="campo-hora">
-            <label for="das">Das</label>
-            <input type="time" id="das" name="das" value="19:00">
-            </div>
-
-            <div class="campo-hora">
-            <label for="ate">Até</label>
-            <input type="time" id="ate" name="ate" value="20:00">
-            </div>
-
-            <button type="submit">Salvar evento</button>
-            </div>
-
-        </form>
-    </div>
-    </div>
-    </div>
-</div>
+  <!-- Faixa cinza fora da caixa branca -->
+  <div class="button-box">
+    <button type="submit">Salvar evento</button>
+  </div>
 </body>
 </html>
