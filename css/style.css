@@ -47,10 +47,10 @@ body {
 }
 
 .login-box h2 {
+    margin-top: 25px;
+    margin-bottom: 2px;
     text-align: left;
-    color: black;
-    margin: 10px auto;
-}
+    color: black;}
 
 label {
     margin-top: 25px;
@@ -62,7 +62,8 @@ input {
     display: block;
     margin-top: 10px;
     padding: 10px;
-    border-radius: 0 0 10px 0 rgba(0,0,0,0.1);
+    border-radius: 8px rgba(225, 216, 216, 0.742);
+    height: 25px;
 }
 
 small {
@@ -140,4 +141,44 @@ select {
 /* Mostra o “✔” quando marcado */
 .checkbox-container input:checked + .checkmark::after {
   display: block;
+}
+
+.campo-hora {
+  display: flex;
+  flex-direction: column;
+  flex: 1;           /* faz cada campo se ajustar proporcionalmente */
+  min-width: 160px;
+}
+
+.campo-hora label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #4a3b63;        
+}
+
+.campo-hora input {
+  border: 1.5px solid #e2e2e2;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+  color: #3a3a3a;
+}
+
+.campo-hora input:focus {
+  border-color: #45bdf0;
+  outline: none;
+}
+
+/* Faz o campo de data ocupar mais espaço */
+.campo-hora:first-child {
+  flex: 2; /* o dobro do tamanho dos outros */
+}
+
+.bloco-horario {
+  display: flex;
+  gap: 20px;              /* espaço entre as caixas */
+  align-items: flex-start;
+  flex-wrap: wrap;        /* quebra linha se faltar espaço */
+  margin-top: 10px;
 }
