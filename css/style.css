@@ -91,3 +91,53 @@ select {
     border: 1px solid #d3d3d3;
     border-radius: 8px;
 }
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #3a3a3a;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Esconde o checkbox padrão */
+.checkbox-container input {
+  display: none;
+}
+
+/* Cria o quadradinho */
+.checkmark {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1.5px solid #d1d1d1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Efeito quando marcado */
+.checkbox-container input:checked + .checkmark {
+  border:1.5px solid #d3d3d3;
+  background-color: transparent;
+}
+
+/* Cria o “✔” */
+.checkbox-container .checkmark::after {
+  content: "";
+  width: 6px;
+  height: 12px;
+  border: solid #45bdf0;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+/* Mostra o “✔” quando marcado */
+.checkbox-container input:checked + .checkmark::after {
+  display: block;
+}
