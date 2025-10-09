@@ -16,17 +16,17 @@
         <hr>
         
         <form>
-            <label for="text">Título do evento</label>
+            <label for="text">Título do evento <small>(mínimo 8 caracteres)</small></label>
 
             <input type="text" id="text"
             text="text" style="width: 45%; height: 20px; font-size: 10px;">
 
-            <label for="link">Link do evento</label>
+            <label for="link">Link do evento <small>(comece com https://)</small></label>
 
             <input type="link" id="link"
             link="link" style="width: 45%; height: 20px; font-size: 10px;">
 
-            <label for="number">Whatsapp para contato</label>
+            <label for="number">Whatsapp para contato <small>(somente números)</small></label>
 
             <input type="number" id="number"
             link="number" style="width: 45%; height: 20px; font-size: 10px;">
@@ -35,6 +35,18 @@
 
             <input type="text" id="text"
             text="text" style="width: 45%; height: 20px; font-size: 10px;">
+
+            <label for="categoriaeventos">Categoria</label>
+            <select id="categoriaeventos" name="categoriaeventos">
+                <option value="aniversario">Aniversário</option>
+                <option value="reuniao">Reunião</option>
+                <option value="concerto">Concerto/Música</option>
+                <option value="festa">Festa</option>
+                <option value="viagem">Viagem</option>
+                <option value="casamento">Casamento</option>
+                <option value="esportivo">Evento Esportivo</option>
+                <option value="outros">Outros</option>
+            </select>
 
         </form>
     </div>
